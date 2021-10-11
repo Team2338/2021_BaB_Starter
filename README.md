@@ -11,6 +11,8 @@
  Pigeon
  
  ## Requirements
+ 
+ ### Basic
  Joystick turns falcon motor forward and reverse (from +100% to -100%)
  
  Hold A - turn spark/neo 2000 RPM, display RPM to console
@@ -19,6 +21,7 @@
  
  Read pigeon heading, and display to console heading
 
+ ### Intermediate
  Display Neo RPM on Shuffleboard
  
  Show limit switch state red/green box on Shuffleboard
