@@ -1,19 +1,8 @@
 
 package team.gif.robot;
 
-import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
-import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
-import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
-import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
-import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import team.gif.lib.autoMode;
-import team.gif.robot.commands.autos.*;
-import team.gif.robot.commands.drivetrain.Drive;
-import team.gif.robot.subsystems.Drivetrain;
-import team.gif.robot.subsystems.drivers.Limelight;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -23,25 +12,7 @@ import team.gif.robot.subsystems.drivers.Limelight;
  */
 public class Robot extends TimedRobot {
 
-  private Command m_autonomousCommand = null;
-
-  private Command driveCommand = null;
-
-  private SendableChooser<autoMode> autoModeChooser = new SendableChooser<>();
-
-  private autoMode chosenAuto;
-
-
-  public static Limelight limelight;
-
-  public static ShuffleboardTab autoTab = Shuffleboard.getTab("PreMatch");
-  private NetworkTableEntry allianceEntry = autoTab.add("Alliance","Startup")
-                                                    .withPosition(3,0)
-                                                    .withSize(1,1)
-                                                    .getEntry();
-
   public static OI oi;
-  private Drivetrain drivetrain = null;
 
 
   /**
@@ -52,11 +23,7 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     System.out.println("robot init");
-    tabsetup();
     // autonomous chooser on the dashboard.
-
-    driveCommand = new Drive(Drivetrain.getInstance());
-    drivetrain = Drivetrain.getInstance();
 
   }
 
@@ -70,7 +37,6 @@ public class Robot extends TimedRobot {
   @Override
   public void robotPeriodic() {
 
-    chosenAuto = autoModeChooser.getSelected();
 
     CommandScheduler.getInstance().run();
 
@@ -89,18 +55,6 @@ public class Robot extends TimedRobot {
 
   @Override
   public void autonomousInit() {
-    System.out.println("autonomous init start");
-
-    drivetrain.resetEncoders();
-    drivetrain.resetPose();
-    System.out.println("Auto: Sensors Reset");
-
-    updateauto();
-      System.out.println("Auto: auto selection updated");
-
-    m_autonomousCommand.schedule();
-
-    System.out.println("autonomous init end");
 
   }
 
@@ -116,15 +70,7 @@ public class Robot extends TimedRobot {
   public void teleopInit() {
     System.out.println("teleop init");
 
-    // This makes sure that the autonomous stops running when
-    // teleop starts running. If you want the autonomous to
-    // continue until interrupted by another command, remove
-    // this line or comment it out.
-    if (m_autonomousCommand != null) {
-      m_autonomousCommand.cancel();
-    }
     oi = new OI();
-    driveCommand.schedule();
   }
 
   @Override
@@ -147,27 +93,4 @@ public class Robot extends TimedRobot {
   @Override
   public void simulationPeriodic(){
   }
-
-  public void tabsetup(){
-
-    autoTab = Shuffleboard.getTab("PreMatch");
-
-    autoModeChooser.setDefaultOption("Mobility", autoMode.MOBILITY);
-
-    autoTab.add("Auto Select",autoModeChooser)
-            .withWidget(BuiltInWidgets.kComboBoxChooser)
-            .withPosition(1,0)
-            .withSize(2,1);
-
-  }
-
-  public void updateauto(){
-
-    if(chosenAuto == autoMode.MOBILITY){
-        m_autonomousCommand = new Mobility();
-    } else if(chosenAuto ==null) {
-        System.out.println("Autonomous selection is null. Robot will do nothing in auto :(");
-    }
-  }
-
 }
