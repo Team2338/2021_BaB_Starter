@@ -14,7 +14,6 @@ public class Robot extends TimedRobot {
 
   public static OI oi;
 
-
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -37,7 +36,6 @@ public class Robot extends TimedRobot {
   @Override
   public void robotPeriodic() {
 
-
     CommandScheduler.getInstance().run();
 
   }
@@ -55,7 +53,6 @@ public class Robot extends TimedRobot {
 
   @Override
   public void autonomousInit() {
-
   }
 
   /**
@@ -63,7 +60,6 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousPeriodic() {
-
   }
 
   @Override
