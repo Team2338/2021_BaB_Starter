@@ -1,23 +1,20 @@
-# Reprogramming 2020
- FRC robot code for 2338 Gear it Forward's 2020 robot, "Prowler".
+# 2021 Build-A-Bot Template
+ FRC robot code for Build-A-Bot training. This training combines the basic concepts of electrical and programming to provide hands-on experience.
+  
+ ## Hardware
+ Neo and SparkMax
+ Falcon and TalonSRX
+ Limit Switch
+ Pigeon
  
- ## Drivetrain
- Arcade Drive.
- Uses 4 TalonSRX motor controllers with 4 CIM motors.
- 
- ## Hanger
- W.I.P. Motion Magic
- 
- ## Indexer
- Capable of using TalonSRX OR VictorSPX.
- If available space is detected by sensors, power cells are moved through the system.
- Can reverse last power cells in last 3 positions if jammed.
- Can be toggled on/off if jammed or if sensor is accidentally triggered.
- 
- ## Intake
- Vectored wheels positioned to draw power cells towards the center, where they are fed into the indexer.
- Holds the 5th power cell.
- 
- ## Shooter
- REV SparkMax motor controller partnered with NEO brushless motor.
- Uses Feed-Forward and P loop to reach target RPM.
+ ## Requirements
+ Joystick turns falcon motor forward and reverse (from +100% to -100%)
+ Hold A - turn spark/neo 2000 RPM, display RPM to console
+ Detect Limit Switch, and display to console state of switch
+ Read pigeon heading, and display to console heading
+
+ Display Neo RPM on Shuffleboard
+ Show limit switch state red/green box on Shuffleboard
+ Show pigeon heading and display using compass widget on Shuffleboard
+
+ If switch is pressed, run talon at 50% power
