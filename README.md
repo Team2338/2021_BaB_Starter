@@ -3,8 +3,11 @@
   
  ## Hardware
  Neo and SparkMax
+ 
  Falcon and TalonSRX
+ 
  Limit Switch
+ 
  Pigeon
  
  ## Requirements
