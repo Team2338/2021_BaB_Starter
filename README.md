@@ -17,14 +17,14 @@
  
  Hold A - turn spark/neo 2000 RPM, display RPM to console
  
- Detect Limit Switch, and display to console state of switch
+ Display state of limit switch to console (not pressed = false, pressed = true)
  
  Read pigeon heading, and display to console heading
 
  ### Intermediate
  Display Neo RPM on Shuffleboard
  
- Show limit switch state red/green box on Shuffleboard
+ Show limit switch state Shuffleboard (not pressed = green, pressed = red)
  
  Show pigeon heading and display using compass widget on Shuffleboard
 
