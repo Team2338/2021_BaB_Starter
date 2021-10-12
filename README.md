@@ -4,8 +4,8 @@
  ## Hardware
  Neo Motor and SparkMax
  
- CIM MOtor and TalonSRX
- 
+ CIM Motor and TalonSRX
+
  Limit Switch
  
  Pigeon (connected through TalonSRX)
