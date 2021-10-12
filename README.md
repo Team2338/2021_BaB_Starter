@@ -24,7 +24,7 @@
  ### Intermediate
  Display Neo RPM on Shuffleboard
  
- Show limit switch state Shuffleboard (not pressed = green, pressed = red)
+ Show limit switch state Shuffleboard (not pressed = red, pressed = green)
  
  Show pigeon heading and display using compass widget on Shuffleboard
 
