@@ -2,30 +2,35 @@
  FRC robot code for Build-A-Bot training. This training combines the basic concepts of electrical and programming to provide hands-on experience.
   
  ## Hardware
- Neo and SparkMax
+ Neo Motor and SparkMax
  
- Falcon and TalonSRX
+ CIM MOtor and TalonSRX
  
  Limit Switch
  
- Pigeon
+ Pigeon (connected through TalonSRX)
  
  ## Requirements
  
+ ### Parameters
+ Param 1: Run CIM in Brake mode
+ 
  ### Basic
- Joystick turns falcon motor forward and reverse (from +100% to -100%)
+ Req 1: Teleop: Hold B - run CIM at 20% power forward
  
- Hold A - turn spark/neo 2000 RPM, display RPM to console
+ Req 2: Teleop: Hold X - run CIM at 20% power reverse
  
- Display state of limit switch to console (not pressed = false, pressed = true)
+ Req 3: Teleop: Joystick turns CIM motor forward and reverse (from +100% to -100%)
  
- Read pigeon heading, and display to console heading
+ Req 4: Teleop: Hold A - turn SparkMax/Neo 60 RPM, display RPM to console
+
+ Req 5: All: Display state of limit switch to console (not pressed = false, pressed = true)
+ 
+ Req 6: All: Read pigeon heading, and display to console heading
 
  ### Intermediate
- Display Neo RPM on Shuffleboard
+ Req 7: All: Show limit switch state on Shuffleboard (not pressed = red, pressed = green)
  
- Show limit switch state Shuffleboard (not pressed = red, pressed = green)
+ Req 8: All: Show pigeon heading and display using compass widget on Shuffleboard
  
- Show pigeon heading and display using compass widget on Shuffleboard
-
- If switch is pressed, run talon at 50% power
+ Req 9: Teleop: If switch is pressed, cut TalonSRX/CIM power by 50% (when B and X are held)
