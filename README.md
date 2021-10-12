@@ -16,17 +16,17 @@
  Param 1: Run CIM in Brake mode
  
  ### Basic
- Req 1: Teleop: Hold B - run CIM at 20% power forward
+ Req 1: All: Display state of limit switch to console (not pressed = false, pressed = true)
  
- Req 2: Teleop: Hold X - run CIM at 20% power reverse
+ Req 2: All: Read pigeon heading, and display to console heading
  
- Req 3: Teleop: Joystick turns CIM motor forward and reverse (from +100% to -100%)
+ Req 3: Teleop: Hold B - run CIM at 20% power forward
  
- Req 4: Teleop: Hold A - turn SparkMax/Neo 60 RPM, display RPM to console
-
- Req 5: All: Display state of limit switch to console (not pressed = false, pressed = true)
+ Req 4: Teleop: Hold X - run CIM at 20% power reverse
  
- Req 6: All: Read pigeon heading, and display to console heading
+ Req 5: Teleop: Joystick turns CIM motor forward and reverse (from +100% to -100%)
+ 
+ Req 6: Teleop: Hold A - turn SparkMax/Neo 60 RPM, display RPM to console
 
  ### Intermediate
  Req 7: All: Show limit switch state on Shuffleboard (not pressed = red, pressed = green)
